@@ -22,6 +22,7 @@
             ];
             $this->db->insert('riwayat_jabatan', $data);
         }
+
         public function tambahdatanilai(){
             $this->nip=uniqid();
             $file_bukti = $this->input->post('nip').'-'.$this->input->post('nama',true);
@@ -51,13 +52,11 @@
         public function ubahdatajabatan(){
             $data = [
                 "jabatan"=>$this->input->post('jabatan',true),
-                "tmt"=>$this->input->post('tmt',true),
-                "jabatan_lama"=>$this->input->post('jabatan_lama',true),
-                "tmt_lama"=>$this->input->post('tmt_lama',true),
+                "tmt"=>$this->input->post('tmt',true),                
                 "nip"=>$this->input->post('nip',true),
                 "nama"=>$this->input->post('nama',true),
                 "angka_kredit"=>$this->input->post('angka_kredit',true),
-                "keterangan"=>$this->input->post('keterangan',true)
+                "angka_kredit_acuan"=>$this->input->post('acuan',true),
             ];
             $this->db->where('id_riwayat_jabatan', $this->input->post('id_riwayat_jabatan'));
             $this->db->update('riwayat_jabatan', $data);
@@ -83,6 +82,25 @@
         public function getJabatanByPegawai($idPegawai){
             $query = $this->db->select('*')->from('riwayat_jabatan')->limit(1)->order_by('id_riwayat_jabatan', 'DESC')->get();
             return $query->row_array();
+        }
+
+		private function _uploadImage($id_pelatihan)
+        {
+            $config['upload_path']          = './upload/pelatihan/';
+            $config['allowed_types']        = 'pdf|jpg|png';
+            $config['file_name']            = $id_pelatihan;
+            $config['overwrite']			= true;
+            $config['max_size']             = 1024; // 1MB
+            // $config['max_width']            = 1024;
+            // $config['max_height']           = 768;
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('image')) {
+                return $this->upload->data("file_name");
+            }
+            
+            return "default.jpg";
         }
 
 		public function edit($w, $data)
