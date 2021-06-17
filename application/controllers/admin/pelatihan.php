@@ -116,6 +116,16 @@
             $this->pdf_pelatihan->filename = "laporanpelatihan.pdf";
             $this->pdf_pelatihan->load_view('admin/pelatihan/laporanpelatihan',$data);
         }
+		public function laporanpelatihanD_pdf($id){
+            
+            $this->load->library('pdf_pelatihan');
+
+            $data['pelatihan'] = $this->cetak_model_pelatihan->getdatabyID($id);
+
+            $this->pdf_pelatihan->setPaper('A4', 'portrait');
+            $this->pdf_pelatihan->filename = "laporanpelatihanDetail.pdf";
+            $this->pdf_pelatihan->load_view('admin/pelatihan/laporanpelatihan',$data);
+        }
 		public function getData()
 		{
 			$data = $this->pelatihan_model->getAjukan();

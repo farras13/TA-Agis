@@ -95,7 +95,7 @@
                                                 $no=1;
                                                 foreach ($listPelatihan as $pelatihan){?>
                                                     <tr>
-                                                        <td><?= $no ?></td>
+                                                        <td><?= $no++ ?></td>
                                                         <td><?= $pelatihan["nama_pelatihan"] ?></td>
                                                         <td><?= $pelatihan["tgl_pelatihan"] ?></td>
                                                         <td><?= $pelatihan["deskripsi"] ?></td>

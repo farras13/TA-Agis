@@ -11,8 +11,8 @@ class cetak_model_pelatihan extends CI_Model {
         return $this->db->get('pelatihan')->result_array();
     }
 
-    public function getdatabyID($nip){
-        return $this->db->get_where('pelatihan', array('nip' => $nip))->result();
+    public function getdatabyID($id){
+        return $this->db->get_where('pelatihan', array('id_pelatihan' => $id))->result_array();
     }
 }
 
