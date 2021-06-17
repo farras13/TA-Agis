@@ -120,7 +120,7 @@
         
         $this->load->library('pdf_jabatan');
 
-        $data['jabatan'] = $this->cetak_model_jabatan->view();
+        $data['riwayat_jabatan'] = $this->cetak_model_jabatan->view();
 
         $this->pdf_jabatan->setPaper('A4', 'portrait');
         $this->pdf_jabatan->filename = "laporanjabatan.pdf";
