@@ -12,7 +12,7 @@ class cetak_model_jabatan extends CI_Model {
     }
 
     public function getdatabyID($nip){
-        return $this->db->get_where('riwayat_jabatan', array('nip' => $nip))->result();
+        return $this->db->get_where('riwayat_jabatan', array('nip' => $nip))->result_array();
     }
 
 	public function view_pkj()
@@ -22,7 +22,7 @@ class cetak_model_jabatan extends CI_Model {
     }
 
 	public function getdatabyID_pkj($nip){
-        return $this->db->get_where('riwayat_jabatan', array('nip' => $nip))->result();
+        return $this->db->get_where('riwayat_jabatan', array('nip' => $nip))->result_array();
     }
 }
 

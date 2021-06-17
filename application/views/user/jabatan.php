@@ -78,7 +78,7 @@
 											<div class="col-md-6">
 												<div class="float-right">
 													<?php $log = $this->session->userdata('pegawai'); ?>
-													<a href="<?php echo base_url('user/pegawai/laporan_detail_pegawai_pdf/' . $log['nip']) ?>" target="__BLANK" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fas fa-file-pdf "></i>
+													<a href="<?php echo base_url('user/jabatan/laporanjabatan_pdf/' . $log['nip']) ?>" target="__BLANK" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fas fa-file-pdf "></i>
 														Laporan PDF
 													</a>
 												</div>

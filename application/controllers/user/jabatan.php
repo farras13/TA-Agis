@@ -67,12 +67,12 @@ class jabatan extends CI_Controller
 		$this->load->view("admin/jabatan/detailjabatan", $data);
 	}
 
-	public function laporanjabatan_pdf()
+	public function laporanjabatan_pdf($id)
 	{
 
 		$this->load->library('pdf_jabatan');
 
-		$data['jabatan'] = $this->cetak_model_pelatihan->view();
+		$data['riwayat_jabatan'] = $this->cetak_model_jabatan->getdatabyID($id);
 
 		$this->pdf_jabatan->setPaper('A4', 'portrait');
 		$this->pdf_jabatan->filename = "laporanjabatan.pdf";
