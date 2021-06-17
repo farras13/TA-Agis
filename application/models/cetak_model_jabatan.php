@@ -14,5 +14,15 @@ class cetak_model_jabatan extends CI_Model {
     public function getdatabyID($nip){
         return $this->db->get_where('riwayat_jabatan', array('nip' => $nip))->result();
     }
+
+	public function view_pkj()
+    {
+        $this->db->select('nama,nip,tugas,poin,status,created_at');
+        return $this->db->get('data_nilai')->result_array();
+    }
+
+	public function getdatabyID_pkj($nip){
+        return $this->db->get_where('riwayat_jabatan', array('nip' => $nip))->result();
+    }
 }
 

@@ -139,11 +139,22 @@
 	{
 		// print_r($id); die;
 		$data = array('status' => $wr, );
-		$w = array('nip' => $id, );
+		$w = array('id_data_nilai' => $id, );
 		$this->jabatan_model->editData('data_nilai', $w, $data);		
 		redirect('admin/jabatan/pkj','refresh');
 		
 	}
+
+	public function laporanpkj_pdf(){
+        
+        $this->load->library('pdf_pkj');
+
+        $data['pkj'] = $this->cetak_model_jabatan->view_pkj();
+
+        $this->pdf_pkj->setPaper('A4', 'portrait');
+        $this->pdf_pkj->filename = "laporanpkj.pdf";
+        $this->pdf_pkj->load_view('admin/jabatan/laporanpkj',$data);
+    }
 }
     
     /* End of file pegawai.php */

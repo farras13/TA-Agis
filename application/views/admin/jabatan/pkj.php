@@ -29,16 +29,16 @@
 							<div class="card">
 								<div class="card-header font-weight-bold">
 									<div class="row">
-										<div class="col-md-12">
+										<div class="col-md-6">
 											List Pengajuan Kenaikan Jabatan
 										</div>
-										<!-- <div class="col-md-6">
+										<div class="col-md-6">
 											<div class="float-right">
-												<a href="<?php echo base_url('user/jabatan/formpkj/') ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus "></i>
-													Tambah Pengajuan
+												<a href="<?php echo base_url('admin/jabatan/laporanpkj_pdf') ?>" target="__BLANK" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fas fa-file-pdf "></i>
+													Laporan PDF
 												</a>
 											</div>
-										</div> -->
+										</div>
 									</div>
 								</div>
 
@@ -73,10 +73,10 @@
 															</a>
 														</td>
 														<td>
-															<a class="btn btn-success" href="<?= base_url('admin/jabatan/aksipkj/1/'). $dn["nip"] ?>">
+															<a class="btn btn-success" href="<?= base_url('admin/jabatan/aksipkj/1/'). $dn["id_data_nilai"] ?>">
 																<i class='fa fa-check'> </i>
 															</a> 			
-															<a class="btn btn-danger" href="<?= base_url('admin/jabatan/aksipkj/2/'). $dn["nip"] ?>">
+															<a class="btn btn-danger" href="<?= base_url('admin/jabatan/aksipkj/2/'). $dn["id_data_nilai"] ?>">
 																<i> <b>X</b> </i>
 															</a> 													
 														</td>
