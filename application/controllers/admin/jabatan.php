@@ -127,6 +127,17 @@
         $this->pdf_jabatan->load_view('admin/jabatan/laporanjabatan',$data);
     }
 
+	public function laporanjabatanD_pdf($id){
+        
+        $this->load->library('pdf_jabatan');
+
+        $data['riwayat_jabatan'] = $this->cetak_model_jabatan->getdatabyID($id);
+
+        $this->pdf_jabatan->setPaper('A4', 'portrait');
+        $this->pdf_jabatan->filename = "laporanjabatan.pdf";
+        $this->pdf_jabatan->load_view('admin/jabatan/laporanjabatan',$data);
+    }
+
 	public function pkj()
 	{
 		$data['title'] = 'Pengajuan Kenaikan Jabatan Pegawai';		
