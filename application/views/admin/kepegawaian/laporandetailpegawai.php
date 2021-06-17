@@ -71,7 +71,7 @@
         <?= $pegawai['email']; ?>
     </p>
         
-        <table>
+        <table width = "100%">
             <caption>List Pelatihan</caption>
             <thead>
             <tr>
@@ -85,7 +85,7 @@
             <?php $no=1;
                 foreach ($listPelatihan as $pelatihan): ?>
             <tr>
-                <td><?= $no ?></td>
+                <td><?= $no++ ?></td>
                 <td><?= $pelatihan["nama_pelatihan"] ?></td>
                 <td><?= $pelatihan["tgl_pelatihan"] ?></td>
                 <td><?= $pelatihan["deskripsi"] ?></td>
