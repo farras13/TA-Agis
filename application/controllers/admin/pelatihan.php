@@ -34,6 +34,7 @@
         public function tambah()
         {
             $data['title'] = 'Form Tambah Data Pegawai';
+            $data['pegawai'] = $this->pelatihan_model->getData('pegawai')->result_array();
             $this->form_validation->set_rules('nip','Nip','required');
             $this->form_validation->set_rules('nama_pelatihan','Nama Pelatihan','required');
             $this->form_validation->set_rules('tgl_pelatihan','Tanggal Pelatihan','required');

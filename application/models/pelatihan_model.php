@@ -141,6 +141,11 @@
 			$this->db->update($t, $object, $w);
 		}
 
+		public function getData($t)
+		{
+			return $this->db->get($t);
+		}
+
     }
 
     

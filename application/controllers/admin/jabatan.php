@@ -10,6 +10,7 @@
             parent::__construct();
             $this->load->model('jabatan_model');
             $this->load->model('cetak_model_jabatan');
+            $this->load->model('kepegawaian_model');
             
             //cek apakah user sudah login atau belum
             $this->load->model('login_model');
@@ -29,6 +30,17 @@
             $this->load->view("admin/jabatan/listjabatan",$data);
         }
 
+		public function userDetails(){
+			// POST data
+			$postData = $this->input->post();
+		
+			// get data
+			
+			$data = $this->kepegawaian_model->getpegawaiByID($postData['username']);
+			
+			echo json_encode($data);
+		  }
+
 		public function arsip()
 		{
 			$data['title'] = 'Arsip Data';
@@ -40,6 +52,7 @@
         {
             $data['title'] = 'Form Tambah Data Jabatan';
 			$data['acuan'] = $this->jabatan_model->getData('acuan_kredit')->result();
+			$data['pegawai'] = $this->jabatan_model->getData('pegawai')->result_array();
 			$this->form_validation->set_rules('nama','Nama Pegawai','required');
             $this->form_validation->set_rules('nip','NIP','required');
             $this->form_validation->set_rules('jabatan','Jabatan Saat ini','required');
