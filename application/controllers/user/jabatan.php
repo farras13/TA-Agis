@@ -111,7 +111,7 @@ class jabatan extends CI_Controller
 				'created_at' => date('Y-m-d'),
 			
 			);
-			$this->jabatan_model->tambahdatanilai('data_nilai', $data);
+			$this->jabatan_model->insData('data_nilai', $data);
 		} 
 		$this->session->set_flashdata(
 			'message',

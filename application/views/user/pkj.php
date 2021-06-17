@@ -132,7 +132,8 @@
 												$no=1;
 												foreach($datanilaii as $dn): if($dn["status"] == 0):
                                             ?>
-														<td><?= $no; ?></td>
+											<tr>
+														<td><?= $no++; ?></td>
 														<td><?= $dn["created_at"]; ?></td>
 														<td><?= $dn["nama"]; ?></td>
 														<td><?= $dn["nip"]; ?></td>
@@ -140,7 +141,7 @@
 														<td><?= $dn["poin"]; ?></td>
 														<td>
 															<a class="btn btn-dark" href="../upload/jabatan/<?= $dn["bukti"]; ?> ">
-																<i class='fa fa-file-pdf'> </i><?= $dn["bukti"]; ?>
+																<i class='fa fa-file-pdf'> </i> <?= $dn["bukti"]; ?>
 															</a>															
 															<td><?php if($dn["status"] == 0): echo "Diajukan"; endif;?></td> 
 												<?php endif; endforeach;?>
