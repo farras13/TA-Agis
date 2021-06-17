@@ -57,7 +57,7 @@
                                         <label for="angka_kredit">Kredit Acuan</label>
 										<select name="acuan" id="acuan" class="form-control" >
 											<?php foreach ($acuan as $k): ?>
-												<option value="<?= $k->kredit ?>"> <?=  $k->golongan . ' | ' .$k->kredit ?> <?= $riwayat_jabatan['acuan'] ; ?> </option>
+												<option value="<?= $k->kredit ?>" <?php if($k->kredit >= $riwayat_jabatan['angka_kredit_acuan']): echo 'selected'; endif;  ?>> <?=  $k->golongan . ' | ' .$k->kredit ?>  </option>
 											<?php endforeach; ?>
 										</select >
                                     </div>

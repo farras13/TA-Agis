@@ -73,6 +73,7 @@
 
         public function edit($id){
             $data ['title']='Form Edit Data Jabatan';
+            $data ['acuan']=$this->jabatan_model->getData('acuan_kredit')->result();
             $this->form_validation->set_rules('nama','Nama Pegawai','required');
             $this->form_validation->set_rules('nip','NIP','required');
             $this->form_validation->set_rules('jabatan','Jabatan Saat ini','required');
