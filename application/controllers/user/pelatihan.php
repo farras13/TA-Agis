@@ -116,10 +116,10 @@
         
         $this->load->library('pdf_pelatihan');
 
-		$log = 	$this->session->userdata('kepegawaian');
+		$log = $this->session->userdata('pegawai');
 		
-        $data['pelatihan'] = $this->cetak_model_pelatihan->getdatabyID($log['nip']);
-
+        $data['pelatihan'] = $this->cetak_model_pelatihan->getdatabynip($log['nip']);
+		// print_r($log);die;
         $this->pdf_pelatihan->setPaper('A4', 'portrait');
         $this->pdf_pelatihan->filename = "laporanpelatihan.pdf";
         $this->pdf_pelatihan->load_view('user/laporanpelatihan',$data);

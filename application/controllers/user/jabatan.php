@@ -72,7 +72,7 @@ class jabatan extends CI_Controller
 
 		$this->load->library('pdf_jabatan');
 
-		$data['riwayat_jabatan'] = $this->cetak_model_jabatan->getdatabyID($id);
+		$data['riwayat_jabatan'] = $this->cetak_model_jabatan->getdatabyID_pkj($id);
 
 		$this->pdf_jabatan->setPaper('A4', 'portrait');
 		$this->pdf_jabatan->filename = "laporanjabatan.pdf";
